@@ -24,13 +24,13 @@ $(document).ready(function(){
             foodButton = $("<button type='button'>" + food[i] +"</button>").addClass("js-button").attr("data-food", food[i]);
             $(".js-food-buttons").append(foodButton);
             console.log(foodButton.attr("data-food"));
-           // return foodButton.attr("data-food");
+          
         }
         return foodButton.attr("data-food");
     };
     
 //creating buttons
-    $("input:submit").on("click", function(){
+    $("input:submit").on("click",function(){
         event.preventDefault();
         console.log(userInput.val());
         food.push(userInput.val());
@@ -42,11 +42,11 @@ $(document).ready(function(){
    
         //$(".js-food-gifs").empty(); 
 
-    $(".js-food-buttons").on("click", function(){
-        $(".js-food-gifs").empty();
-        console.log($(this));
+    $(document).on("click", '.js-button', function(){
+       $(".js-food-gifs").empty();
+       // console.log($(this));
         
-        food = (foodButton.attr("data-food"));
+        let food = ($(this).attr("data-food"));
         console.log(food);
         //console.log(("js-food-buttons").attr("data"));
         //$(".js-food-gifs").empty();
@@ -84,7 +84,7 @@ $(document).ready(function(){
                 foodDiv.append(p);
                 foodDiv.append(foodImage);
     
-                // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
+                // Prependng the foodDiv to the HTML page in the "#gifs-appear-here" div
                 $(".js-food-gifs").prepend(foodDiv);
               }
             });
