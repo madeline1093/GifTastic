@@ -5,25 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Faster+One|Monoton|Unica+One" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./main.js"></script>
 </head>
 <body>
-    <div class="js-food-buttons">
-
+    <h1 class="title">Gif Creator!</h1>
+    <div class="input-area">
+        <div class="js-food-buttons button-style"></div>   
+        <form class="js-food-form">
+            <label for="food-input">Add  a  food</label>
+            <input type="text" class="js-food-input"><br>
+            <input class="js-add-food" type="submit" value="Submit" id="submit-button">
+        </form>
     </div>
-
-    <form class="js-food-form">
-        <label for="food-input">Add a food</label>
-        <input type="text" class="js-food-input"><br>
-        
-        <input class="js-add-food" type="submit" value="Submit" id="submit-button">
-
-    </form>
-
-    <div class="js-food-gifs">
+    <div class="js-food-gifs gif-container">
 
     </div>
     
