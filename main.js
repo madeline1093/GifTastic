@@ -28,24 +28,6 @@ $(document).ready(function(){
         return foodButton.attr("data-food");
     };
 
-/*     function activateGif() {
-        let state = $(this).attr("data-state");
-        console.log(state);
-
-        if (state === "still") {
-            $(this).find("img").attr("src", $(this).find("img").attr("data-animate"));
-            $(this).find("img").attr("data-state", "animate");
-        } else {
-            $(this).find("img").attr("src", $(this).find("img").attr("data-still"));
-            $(this).find("img").attr("data-state", "still");
-        }
-/*         let state = 
-        console.log("you clicked a gif");
-        let oldSrc = ($(this).attr("src"));
-        let newFood = ($(this).attr("id"));
-        console.log(newFood);
-        console.log($(this).activeImageSrc); */
-   // } */
     
 //creating buttons
     $("input:submit").on("click",function(){
@@ -59,17 +41,15 @@ $(document).ready(function(){
     });
 
    
-        //$(".js-food-gifs").empty(); 
+        
 
     $(document).on("click", '.js-button', function(){
        $(".js-food-gifs").empty();
-       // console.log($(this));
+       
         
         let food = ($(this).attr("data-food"));
         console.log(food);
-        //console.log(("js-food-buttons").attr("data"));
-        //$(".js-food-gifs").empty();
-        //let buttonFood = $(this).attr("data");
+        
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=c4Imp60ETylPGcXaxmsVUyqAvWwsrNOm&q="+ food + "&limit=25&offset=0&rating=G&lang=en"
 
         $.ajax({
@@ -96,8 +76,7 @@ $(document).ready(function(){
     
                 // Creating and storing an image tag
                 var foodImage = $("<img>");
-                //var stillImageSrc = results[i].images.fixed_height_still.url;
-               // var activeImageSrc= results[i].images.fixed_height.url;
+                
 
                 foodImage.addClass("js-gif " + food);
 
@@ -110,11 +89,11 @@ $(document).ready(function(){
                 foodImage.attr("data-state", "still");
     
     
-                // Appending the paragraph and image tag to the animalDiv
+                // Appending the paragraph and image tag to the foodDiv
                 foodDiv.append(p);
                 foodDiv.append(foodImage);
     
-                // Prependng the foodDiv to the HTML page in the "#gifs-appear-here" div
+                // Prependng the foodDiv to the HTML page in the ".js-food-gifs" div
                 $(".js-food-gifs").prepend(foodDiv);
               }
               
@@ -130,39 +109,12 @@ $(document).ready(function(){
         if (state === "still") {
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
-            //$(this).find("img").attr("src", $(this).find("img").attr("data-animate"));
-            //$(this).find("img").attr("data-state", "animate");
+           
         } else {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
-            //$(this).find("img").attr("src", $(this).find("img").attr("data-still"));
-            //$(this).find("img").attr("data-state", "still");
+
         }
-        //activateGif();
-
-
-        //console.log($(this).attr(food));
-       /*  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=c4Imp60ETylPGcXaxmsVUyqAvWwsrNOm&q="+ newFood + "&limit=25&offset=0&rating=G&lang=en"
-       
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-          })
-
-          .then(function(response){
-            let results = response.data;
-           // for (let i = 0; i < results.length; i++) {
-                $(".Pizza").attr("src", results[i].images.fixed_height.url);
-            //}
-          }) */
-          
-       // let index = event.target.getAttribute
-     
-        //let foodImage = this.attr("src", results[i].images.fixed_height.url)
-      /*   let state = $(this).attr("data-state");
-        if (state === "still" {
-            $(this).attr("src", $)
-        }) */
 
     })
     
